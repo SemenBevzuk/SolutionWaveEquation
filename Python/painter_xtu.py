@@ -1,4 +1,3 @@
-""""
 import pylab
 from mpl_toolkits.mplot3d import Axes3D
 import numpy
@@ -49,21 +48,4 @@ pylab.xlabel('x')
 pylab.ylabel('t')
 pylab.grid(True)
 pylab.show()
-"""
-import pylab
-import numpy
 
-
-def makeData():
-    x = numpy.random.rand(160000) * 20.0 - 10.0
-    y = numpy.random.rand(len(x)) * 20.0 - 10.0
-    z = (numpy.sin(x * 0.3) * numpy.cos(y * 0.75) /
-         (1 + numpy.abs(x * y) * 0.05))
-    return x, y, z
-
-
-if __name__ == '__main__':
-    x, y, z = makeData()
-    pylab.rcParams['contour.negative_linestyle'] = 'solid'
-    cs = pylab.tricontour(x, y, z, colors='black')
-    pylab.show()
